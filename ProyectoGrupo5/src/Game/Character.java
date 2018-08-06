@@ -6,8 +6,8 @@ import java.io.Serializable;
 public class Character implements Serializable, Elements{
     
     private String name;
-    private int life;
-    private int stamin;
+    private double life;
+    private double stamin;
     private String element;
     private String image;
     public static boolean siteImage = true;
@@ -15,7 +15,7 @@ public class Character implements Serializable, Elements{
     
     public Character(){}
 
-    public Character(String name, int life, int stamin, String element, String image) {
+    public Character(String name, double life, double stamin, String element, String image) {
         
         this.name = name;
         this.life = life;
@@ -34,19 +34,19 @@ public class Character implements Serializable, Elements{
         this.name = name;
     }
 
-    public int getLife() {
+    public double getLife() {
         return life;
     }
 
-    public void setLife(int life) {
+    public void setLife(double life) {
         this.life = life;
     }
 
-    public int getStamin() {
+    public double getStamin() {
         return stamin;
     }
 
-    public void setStamin(int stamin) {
+    public void setStamin(double stamin) {
         this.stamin = stamin;
     }
 
@@ -67,7 +67,7 @@ public class Character implements Serializable, Elements{
     }
 
     @Override
-    public int Attack() {
+    public double Attack() {
         switch (this.element) {
             case "Pyrus":
                 return 110;
@@ -85,17 +85,17 @@ public class Character implements Serializable, Elements{
     }
 
     @Override
-    public int Defense() {
-        return (int) (this.life+Attack()*0.6);
+    public double Defense() {
+        return (double) (this.life+Attack()*0.6);
     }
 
     @Override
-    public int Cure() {
-        return (int) ((this.life *0.2) + this.life);
+    public double Cure() {
+        return (double) ((this.life *0.2) + this.life);
     }
 
     @Override
-    public int FinalAttack() {
+    public double FinalAttack() {
         switch (this.element) {
             case "Pyrus":
                 return 230;
@@ -119,6 +119,8 @@ public class Character implements Serializable, Elements{
             return image;
         }
     }
+   
+    
     public String imageElement(){
         
         switch (this.element) {

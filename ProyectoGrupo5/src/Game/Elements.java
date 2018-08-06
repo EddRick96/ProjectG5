@@ -3,10 +3,10 @@ package Game;
 
 public interface Elements {
     
-    public int Attack();    
-    public int Defense();    
-    public int Cure();    
-    public int FinalAttack();    
+    public double Attack();    
+    public double Defense();    
+    public double Cure();    
+    public double FinalAttack();    
     
     
 }
